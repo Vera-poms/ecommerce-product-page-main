@@ -15,7 +15,7 @@ const Navbar = () => {
         src={iconMenu} alt="icon-menu"/>
       </div>
 
-     <div className='bg-white absolute left-0 top-0 h-screen w-[65%] z-40 md:hidden'>
+     <div className='bg-white absolute left-0 top-0 h-screen w-[65%] z-40'>
       <img className='w-4 h-4 mt-8 ml-5' 
         src={iconClose} alt="icon-close"/>
       
