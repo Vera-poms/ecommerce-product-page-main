@@ -1,8 +1,8 @@
 import React from 'react';
-import iconMenu from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-menu.svg';
-import iconClose from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-close.svg';
-import logo from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/logo.svg';
-import iconCart from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-cart.svg';
+import iconMenu from '../../../src/assets/images/icon-menu.svg';
+import iconClose from '../../../src/assets/images/icon-close.svg';
+import logo from '../../../src/assets/images/logo.svg';
+import iconCart from '../../../src/assets/images/icon-cart.svg';
 import imageAvatar from '../../assets/images/image-avatar.png';
 
 const Navbar = () => {

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import imgProduct1 from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/image-product-1.jpg'
-import imgProduct2 from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/image-product-2.jpg'
-import imgProduct3 from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/image-product-3.jpg'
-import imgProduct4 from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/image-product-4.jpg'
-import iconPrevious from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-previous.svg'
-import iconNext from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-next.svg'
+import imgProduct1 from '../../../src/assets/images/image-product-1.jpg'
+import imgProduct2 from '../../../src/assets/images/image-product-2.jpg'
+import imgProduct3 from '../../../src/assets/images/image-product-3.jpg'
+import imgProduct4 from '../../../src/assets/images/image-product-4.jpg'
+import iconPrevious from '../../../src/assets/images/icon-previous.svg'
+import iconNext from '../../../src/assets/images/icon-next.svg'
 
 const ImageDisplay = () => {
   const [click, setClick]  = useState(false)
