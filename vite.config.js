@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+<<<<<<< HEAD
   build: {
     rollupOptions: {
       external: [
@@ -15,6 +16,8 @@ export default defineConfig({
       ]
     },
   },
+=======
+>>>>>>> ba8a160 (Mobile first responsive made)
   plugins: [
     react(),
     tailwindcss(),

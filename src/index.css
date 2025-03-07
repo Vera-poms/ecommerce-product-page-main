@@ -16,6 +16,7 @@
  --font-kumbh: "Kumbh", sans-serif; 
  --font-roboto: "Roboto", sans-serif; 
  --shadow-light: 0px 12px 30px hsl(26, 100%, 80%);
+<<<<<<< HEAD
 }
 
 @layer components{
@@ -26,4 +27,6 @@
  /* body{
   opacity: 0.2;
  } */
+=======
+>>>>>>> ba8a160 (Mobile first responsive made)
 }
