@@ -7,20 +7,20 @@ import imageAvatar from '../../assets/images/image-avatar.png';
 
 const Navbar = () => {
   return (
-    <div className='flex px-3 pt-3 pb-5 w-full justify-between h-[60px] fixed z-1 bg-white'>
+    <div className='flex px-3 pt-5 pb-5 w-full justify-between h-[100px] fixed z-1 bg-white'>
      {/*icon-menu and logo container */}
-     <div className='flex space-x-4 items-start'>
+     <div className='flex space-x-4 items-center'>
       <div>
-        <img className='w-4 h-4' 
+        <img className='w-8 h-8' 
         src={iconMenu} alt="icon-menu"/>
       </div>
 
-     <div className='bg-white absolute left-0 top-0 h-screen w-[65%] z-40'>
+     <div className='bg-white absolute left-0 top-0 h-screen w-[65%] z-40 hidden'>
       <img className='w-4 h-4 mt-8 ml-5' 
         src={iconClose} alt="icon-close"/>
       
       <div>
-          <ul className='pt-15 pl-5 font-semibold space-y-3'>
+          <ul className='pt-15 pl-5 font-semibold space-y-3 '>
             <li>
               Collections
             </li>
@@ -41,18 +41,20 @@ const Navbar = () => {
      </div>
 
       <div>
-       <img src={logo} alt="logo" />
+       <img className='h-10'
+       src={logo} alt="logo" />
       </div>
      </div>
 
-     <div className='flex space-x-4 '>
+     <div className='flex space-x-4 pt-5'>
       <div>
-       <img src={iconCart} alt="" />
+       <img className='w-8 h-8'
+       src={iconCart} alt="" />
       </div>
 
       <div>
        <img 
-       className='w-5'
+       className='w-8 h-8'
        src={imageAvatar} alt="" />
       </div>
      </div>
