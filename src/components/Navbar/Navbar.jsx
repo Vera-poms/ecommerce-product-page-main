@@ -7,11 +7,11 @@ import imageAvatar from '../../assets/images/image-avatar.png';
 
 const Navbar = () => {
   return (
-    <div className='flex px-3 pt-5 pb-5 w-full justify-between h-[100px] fixed z-1 bg-white'>
+    <div className='flex px-8 pt-5 pb-5 w-full justify-between h-[150px] fixed z-1 bg-white content-center'>
      {/*icon-menu and logo container */}
-     <div className='flex space-x-4 items-center'>
+     <div className='flex items-center justify-center'>
       <div>
-        <img className='w-8 h-8' 
+        <img className='w-12 h-9' 
         src={iconMenu} alt="icon-menu"/>
       </div>
 
@@ -41,20 +41,20 @@ const Navbar = () => {
      </div>
 
       <div>
-       <img className='h-10'
+       <img className='h-12 ml-5'
        src={logo} alt="logo" />
       </div>
      </div>
 
-     <div className='flex space-x-4 pt-5'>
+     <div className='flex space-x-4 pt-8'>
       <div>
-       <img className='w-8 h-8'
+       <img className='w-20 h-14'
        src={iconCart} alt="" />
       </div>
 
       <div>
        <img 
-       className='w-8 h-8'
+       className='w-20 h-14'
        src={imageAvatar} alt="" />
       </div>
      </div>
