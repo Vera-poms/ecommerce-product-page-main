@@ -8,7 +8,7 @@ const Description = () => {
   return (
     <div className='font-kumbh px-10 pb-8 asbolute z-50'>
      <div>
-      <h6 className='uppercase text-dark-grayish-blue tracking-widest font-normal font-roboto text-2xl pb-5'>Sneaker Company</h6>
+      <h6 className='uppercase text-dark-grayish-blue tracking-widest font-normal font-roboto text-4xl pb-5'>Sneaker Company</h6>
  
       <h1 className='text-7xl font-bold  pb-8'>
        Fall Limited Edition Sneakers

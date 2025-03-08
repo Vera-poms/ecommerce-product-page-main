@@ -23,7 +23,7 @@ const ImageDisplay = () => {
   return (
     <div className='relative top-20 mb-[120px]'>
      <div className=''>
-      <div className='relative'>
+      <div className='relative -z-1'>
         <img id='product1'
         src={imgProduct1} alt="" />
         <img id='product2'
@@ -38,7 +38,7 @@ const ImageDisplay = () => {
 
       </div>
 
-      <div className='absolute z-10 top-120 flex justify-between w-screen px-10'>
+      <div className='absolute z-0 top-120 flex justify-between w-screen px-10'>
         <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
           <img className='h-[30px] w-[30px]' 
           src={iconPrevious} alt="" />
