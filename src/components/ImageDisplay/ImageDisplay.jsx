@@ -18,8 +18,6 @@ const ImageDisplay = () => {
 
   }
   
-
-
   return (
     <div className='relative top-20 mb-[120px]'>
      <div className=''>

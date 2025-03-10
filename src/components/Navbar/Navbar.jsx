@@ -47,7 +47,7 @@ const Navbar = ({close}) => {
         <div className='flex items-center justify-center'
         >
           <div className='cursor-pointer'>
-            <img onClick={() => setOpen(!open)}
+            <img onClick={() => setOpen(o => !o)}
             className='w-12 h-9' 
             src={iconMenu} alt="icon-menu"/>
           </div>
