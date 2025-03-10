@@ -17,3 +17,13 @@
  --font-roboto: "Roboto", sans-serif; 
  --shadow-light: 0px 12px 30px hsl(26, 100%, 80%);
 }
+
+@layer components{
+ .toggle-menu {
+  display: block;
+  transition: all ease-out 3s linear;
+ }
+ /* body{
+  opacity: 0.2;
+ } */
+}
