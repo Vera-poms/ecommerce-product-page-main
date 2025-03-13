@@ -8,11 +8,10 @@ function App() {
 
 
   return (
-<<<<<<< HEAD
-    <div>
-=======
+
+
     <div className='h-screen relative'>
->>>>>>> ba8a160 (Mobile first responsive made)
+
       <Navbar/>
       <ImageDisplay/>
       <Description/>
