@@ -11,10 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
-<<<<<<< HEAD
     "framer-motion": "^12.4.10",
-=======
->>>>>>> ba8a160 (Mobile first responsive made)
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
