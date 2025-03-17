@@ -21,7 +21,7 @@ const ImageDisplay = () => {
 
 
   return (
-    <div className='relative -top-23'>
+    <div className=''>
      <div className=''>
       <div className='relative -z-1 '>
         <img id='product1'

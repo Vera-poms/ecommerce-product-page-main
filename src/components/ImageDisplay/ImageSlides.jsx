@@ -32,58 +32,81 @@ const ImageSlides = () => {
   
   const imageDisplay = `${selectedImage}`
 
-  function setSlide(newDirection: 1 | -1){
-   const nextImage = wrap(1, images.length, selectedImage + newDirection)
-   setSelectedImage(nextImage)
-   setDirection(newDirection)
-  }
+  // function setSlide(newDirection: 1 | -1){
+  //  const nextImage = wrap(1, images.length, selectedImage + newDirection)
+  //  setSelectedImage(nextImage)
+  //  setDirection(newDirection)
+  // }
 
-  const Slide = forwardRef(function Slide({imageDisplay} : {imageDisplay: string}),
-  ref: React.Ref<HTMLDivElement>
- ){
-  const direction  = usePresenceData()
+//   const Slide = forwardRef(function Slide({imageDisplay} : {imageDisplay: string}),
+//   ref: React.Ref<HTMLDivElement>
+//  ){
+//   const direction  = usePresenceData()
 
-  return(
-   <motion.div
-   ref={ref}
-   initial={{opacity: 0, x: direction * 50}}
-   animate={{
-    opacity: 1, 
-    x: 0,
-    transition: {
-     delay: 0.2,
-     type: 'spring',
-     visualDuration: 0.3,
-     bounce: 0.4,
-    }, }}
-    exit={{opacity: 0, x: direction * -50}}>
+  // return(
+  //  <motion.div
+  //  ref={ref}
+  //  initial={{opacity: 0, x: direction * 50}}
+  //  animate={{
+  //   opacity: 1, 
+  //   x: 0,
+  //   transition: {
+  //    delay: 0.2,
+  //    type: 'spring',
+  //    visualDuration: 0.3,
+  //    bounce: 0.4,
+  //   }, }}
+  //   exit={{opacity: 0, x: direction * -50}}>
 
-   </motion.div>
-  )
+  //  </motion.div>
+  // )
+
+  // return (
+  //   <>
+  //    <div className='absolute z-0 top-120 flex justify-between w-screen px-10'>
+  //       <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
+  //         <img onClick={() => setSlide(-1)}
+  //         className='h-[30px] w-[30px]' 
+  //         src={iconPrevious} alt="" />
+  //       </button>
+  //       <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
+  //         <img className='h-[30px] w-[30px]' 
+  //         src={iconNext} alt="" />
+  //       </button>
+  //     </div>
+  //     <AnimatePresence
+  //     custom={direction}
+  //     initial={false}
+  //     mode='popLayout'>
+  //      <Slide key={selectedImage}/>
+  //     </AnimatePresence>
+  //   </>
+  //  )
+  //  return (
+  //   <>
+  //    <div className='absolute z-0 top-120 flex justify-between w-screen px-10'>
+  //       <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
+  //         <img onClick={() => setSlide(-1)}
+  //         className='h-[30px] w-[30px]' 
+  //         src={iconPrevious} alt="" />
+  //       </button>
+  //       <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
+  //         <img className='h-[30px] w-[30px]' 
+  //         src={iconNext} alt="" />
+  //       </button>
+  //     </div>
+  //     <AnimatePresence
+  //     custom={direction}
+  //     initial={false}
+  //     mode='popLayout'>
+  //      <Slide key={selectedImage}/>
+  //     </AnimatePresence>
+  //   </>
+  //  )
  }
 
 
-  return (
-   <>
-    <div className='absolute z-0 top-120 flex justify-between w-screen px-10'>
-       <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
-         <img onClick={() => setSlide(-1)}
-         className='h-[30px] w-[30px]' 
-         src={iconPrevious} alt="" />
-       </button>
-       <button className='bg-white rounded-[50%] px-[35px] py-[35px] cursor-pointer'>
-         <img className='h-[30px] w-[30px]' 
-         src={iconNext} alt="" />
-       </button>
-     </div>
-     <AnimatePresence
-     custom={direction}
-     initial={false}
-     mode='popLayout'>
-      <Slide key={selectedImage}/>
-     </AnimatePresence>
-   </>
-  )
-}
+  // r
+// }
 
 export default ImageSlides

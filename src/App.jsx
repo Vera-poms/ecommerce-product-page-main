@@ -10,7 +10,7 @@ function App() {
   return (
 
 
-    <div className='h-screen relative'>
+    <div className='h-screen'>
 
       <Navbar/>
       <ImageDisplay/>
