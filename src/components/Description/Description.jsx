@@ -1,10 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import iconPlus from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-plus.svg';
 import iconMinus from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-minus.svg';
 import iconCart from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-cart.svg';
 import { PiShoppingCartBold } from "react-icons/pi";
 
 const Description = () => {
+  const [cartItems, setCartItems] = useState(0)
+
+  function addToCart(){
+   setCartItems(c => c + 1) 
+  }
+  function removeFromCart(){
+   setCartItems(c => 
+    c > 0 ? c - 1 : 0 
+   ) 
+  }
+
   return (
     <div className='font-kumbh px-11 pb-8 pt-10'>
      <div>
@@ -35,13 +46,15 @@ const Description = () => {
          </p>
         </div>
         <div className='flex justify-between w-full bg-light-grayish-blue rounded-2xl px-8 py-7 shadow-xs'>
-         <button className='cursor-pointer'>
+         <button className='cursor-pointer'
+         onClick={removeFromCart}>
           <img src={iconMinus} alt="" className='w-6' />
          </button>
          <p className='text-6xl font-bold'>
-          0
+          {cartItems}
          </p>
-         <button className='cursor-pointer'>
+         <button className='cursor-pointer'
+         onClick={addToCart}>
           <img src={iconPlus} alt="" className='w-6' />
          </button>
         </div>
