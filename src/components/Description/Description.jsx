@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import iconPlus from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-plus.svg';
-import iconMinus from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-minus.svg';
-import iconCart from '/Users/poms/Documents/ecommerce-product-page-main/src/assets/images/icon-cart.svg';
+import iconPlus from '../../../src/assets/images/icon-plus.svg';
+import iconMinus from '../../../src/assets/images/icon-minus.svg';
+import iconCart from '../../../src/assets/images/icon-cart.svg';
 import { PiShoppingCartBold } from "react-icons/pi";
 
 const Description = () => {
