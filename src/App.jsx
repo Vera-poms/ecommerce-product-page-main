@@ -65,7 +65,7 @@ function App({}) {
    <Router>
     <Routes>
       <Route path='/' element={
-         <div>
+         <div className='flex flex-col'>
           <div className={` w-full h-screen lg:flex lg:flex-col lg:items-center lg:content-center lg:w-screen lg:h-screen  ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
 
           <div className=''>
