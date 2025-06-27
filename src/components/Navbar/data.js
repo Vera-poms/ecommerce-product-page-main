@@ -2,26 +2,26 @@ export const NavbarMenu = [
  {
   id: 1,
   title: 'Collections',
-  link: '/'
+  link: '#Collections'
  },
  {
   id: 2,
   title: 'Men',
-  link: '#'
+  link: '#Men'
  },
  {
   id: 3,
   title: 'Women',
-  link: '#'
+  link: '#Women'
  },
  {
   id: 4,
   title: 'About',
-  link: '#'
+  link: '#About'
  },
  {
   id: 5,
   title: 'Contact',
-  link: '#'
+  link: '#Contact'
  }
 ]
