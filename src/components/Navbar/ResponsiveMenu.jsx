@@ -23,16 +23,16 @@ const ResponsiveMenu = ({open}) => {
        initial={{opacity: 0, x: -100}}
        animate={{opacity: 1, x:0}}
        exit={{opacity: 0, x: -100}}
-       transition={{duration: 0.3, ease: 'linear'}}
+       transition={{duration: 0.3}}
        className='bg-white fixed left-0 top-0 bottom-0 h-screen w-[65%] z-1 pt-12 pl-12'
        id='menu'>
 
-         <div>
+         <div className=''>
           <img className='w-12 h-12 cursor-pointer'
             src={iconClose} alt="icon-close"
             onClick={closeMenu}/>
 
-           <div>
+           <div className=''>
              <ul className='pt-22 font-semibold space-y-8 text-5xl'>
                <li className='cursor-pointer'>
                  Collections

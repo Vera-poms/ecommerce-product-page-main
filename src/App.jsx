@@ -13,8 +13,10 @@ function App() {
     <div className=''>
 
       <Navbar/>
-      <ImageDisplay/>
-      <Description/>
+      <div className=''>
+        <ImageDisplay/>
+        <Description/>
+      </div>
       <Attribution/>
     </div>
   )
