@@ -7,14 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "build:css": "tailwindcss build src/input.css -o dist/output.css"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.9",
+    "@tailwindcss/vite": "^4.1.11",
     "framer-motion": "^12.4.10",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "motion": "^12.20.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.3"
   },
@@ -22,14 +20,29 @@
     "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.6.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.15",
-    "vite": "^6.2.0"
-  }
+    "postcss": "^8.5.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.3.5"
+  },
+  "description": "",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vera-poms/ecommerce-product-page-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vera-poms/ecommerce-product-page-main/issues"
+  },
+  "homepage": "https://github.com/Vera-poms/ecommerce-product-page-main#readme"
 }

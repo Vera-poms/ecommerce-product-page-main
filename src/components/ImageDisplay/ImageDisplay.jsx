@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import iconPrevious from '../../../src/assets/images/icon-previous.svg'
 import iconNext from '../../../src/assets/images/icon-next.svg'
 import { images } from './images.js'

@@ -9,6 +9,7 @@ import CartItems from './components/CartItems/CartItems.jsx';
 import Checkout from './components/Checkout/Checkout.jsx';
 import TrackingOrder from './components/Order/TrackingOrder.jsx';
 import Attribution from './components/Attribution/Attribution.jsx'
+import Test  from './components/Test/Test.jsx'
 
 
 
@@ -65,7 +66,7 @@ function App({}) {
    <Router>
     <Routes>
       <Route path='/' element={
-         <div className='flex flex-col'>
+         <div className=''>
           <div className={` w-full h-screen lg:flex lg:flex-col lg:items-center lg:content-center lg:w-screen lg:h-screen  ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
 
           <div className=''>
@@ -156,12 +157,14 @@ function App({}) {
           </div>      
           </div>
 
-          <Attribution />
+          {/* <Attribution /> */}
         </div>
       }/>
       <Route path='/checkout' element={<Checkout cartItems={cartItems}/>}/>
 
       <Route path='/tracking' element={<TrackingOrder/>}/>
+
+      {/* <Test/> */}
     </Routes>
    </Router>
   )

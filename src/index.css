@@ -1,34 +1,24 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap");
+
 @import "tailwindcss";
 
-@theme{
- --color-very-dark-blue: hsl(220, 13%, 13%);
- --color-grayish-blue: hsl(220, 14%, 75%);
- --color-dark-grayish-blue: hsl(219, 9%, 45%);
- --color-light-grayish-blue: hsl(223, 64%, 98%);
- --color-white: hsl(0, 0%, 100%);
- --color-dark-blue: hsl(228, 45%, 44%);
- --color-pale-orange: hsl(25, 100%, 94%);
- --color-orange: hsl(26, 100%, 55%);
- --font-kumbh: "Kumbh", sans-serif; 
- --font-roboto: "Roboto", sans-serif; 
- --shadow-light: 0px 12px 30px hsl(26, 100%, 80%);
- --breakpoint-sm: 400px;
- --breakpoint-md: 501px;
- --breakpoint-lg: 830px;
- --breakpoint-xl: 1100px;
- --breakpoint-2xl: 1400px;
 
+@theme {
+  --color-orange: hsl(26, 100%, 55%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-grayish-blue: hsl(223, 64%, 98%);
+  --color-dark-grayish-blue: hsl(219, 9%, 45%);
+  --color-very-dark-blue: hsl(220, 13%, 13%);
+  --color-pale-orange: hsl(25, 100%, 94%);
 }
-@layer components{
- *{
-  box-sizing: border-box;
- }
- body{
-  width: 100vw;
-  height: 100vh;
-  position: relative;
- }
+
+@layer  {
+  * {
+    box-sizing: border-box;
+  }
+/* 
+  body {
+    @apply w-full h-screen relative font-kumbh ;
+  } */
 }
