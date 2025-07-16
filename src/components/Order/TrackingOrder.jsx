@@ -46,12 +46,12 @@ const TrackingOrder = () => {
 
 
   return (
-    <div className='pt-20 px-6 font-kumbh flex flex-col 2xl:px-14'>
-     <h2 className='text-2xl font-bold md:text-3xl 2xl:text-4xl'>
+    <div className='pt-20 px-6 font-kumbh flex flex-col laptop:px-14'>
+     <h2 className='text-2xl font-bold mobile:text-3xl laptop:text-4xl'>
       Thank you for shopping with us!
      </h2>
 
-     <section className='md:text-2xl'> 
+     <section className='mobile:text-2xl'> 
       <h3 className='pt-20 text-dark-grayish-blue'>Your order is being prepared to be shipped:</h3>
 
       <div className='rounded-lg h-[25px] w-full border my-6'>
@@ -68,8 +68,8 @@ const TrackingOrder = () => {
 
     {selectedOption ?( 
      <section className='py-10 '>
-        <h1 className='text-xl md:text-3xl'>Your order arrives on:</h1>
-        <p className='text-dark-grayish-blue md:text-xl'>{arrivalDate}</p>
+        <h1 className='text-xl mobile:text-3xl'>Your order arrives on:</h1>
+        <p className='text-dark-grayish-blue mobile:text-xl'>{arrivalDate}</p>
         
       </section>
     ):(

@@ -33,10 +33,10 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
   
   
   return (
-    <div className=' '>
-     <div className='relative top-15 z-0 mb-25 lg:hidden'>
+    <div className=''>
+     <div className='relative top-15 z-0 mb-25 tablet:hidden h-[1000px]'>
 
-      <div className='relative h-[360px] w-full overflow-hidden md:h-[650px]'>
+      <div className='relative h-full w-screen overflow-hidden'>
        <AnimatePresence mode='wait' initial='false' custom={direction}>
          <motion.img 
           key={currentIndex}
@@ -46,19 +46,19 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
           variants={imageVariants}
           src={images[currentIndex]} 
           alt={`Product ${currentIndex + 1}`} 
-          className='absolute inset-0 h-full w-full object-cover' />
+          className='absolute inset-0 h-full w-screen object-cover' />
        </AnimatePresence>
       </div>
 
       <div className='absolute z-0 top-1/2 flex justify-between w-screen px-3 transform -translate-y-1/2'>
-        <button className='bg-white rounded-[50%] px-[15px] py-[15px] md:px-[30px] md:py-[30px]'
+        <button className='bg-white rounded-[50%] px-[15px] py-[15px] mobile:px-[30px] mobile:py-[30px]'
         onClick={previousImage}>
-          <img className='h-[15px] w-[15px] md:h-[30px] md:w-[30px]' 
+          <img className='h-[15px] w-[15px] mobile:h-[30px] mobile:w-[30px]' 
           src={iconPrevious} alt="" />
         </button>
-        <button className='bg-white rounded-[50%] px-[15px] py-[15px] hover:cursor-pointer md:px-[30px] md:py-[30px]'
+        <button className='bg-white rounded-[50%] px-[15px] py-[15px] hover:cursor-pointer mobile:px-[30px] mobile:py-[30px]'
         onClick={nextImage}>
-          <img className='h-[15px] w-[15px] md:h-[30px] md:w-[30px]' 
+          <img className='h-[15px] w-[15px] mobile:h-[30px] mobile:w-[30px]' 
           src={iconNext} alt="" />
         </button>
       </div>
@@ -76,13 +76,13 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
 
      </div>
 
-     <div className='hidden lg:flex lg:flex-col lg:item-center lg:mr-0 lg:overflow-hidden'>
+     <div className='hidden tablet:flex tablet:flex-col tablet:item-center tablet:mr-0 tablet:overflow-hidden'>
       <div>
         <img 
           key={currentIndex}
           src={images[currentIndex]} 
           alt={`Product ${currentIndex + 1}`}  
-          className='w-3/4 rounded-2xl cursor-pointer overflow-hidden 2xl:w-5/6'
+          className='w-3/4 rounded-2xl cursor-pointer overflow-hidden laptop:w-5/6'
           onClick={lightBox}/>
       </div>
 
@@ -95,11 +95,11 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
                 key={index} 
                 src={img} 
                 alt={`Thumbnail ${index + 1}`} 
-                className={`w-14 h-14 mr-7 rounded-lg xl:w-18 2xl:w-21 xl:h-18 2xl:h-21
+                className={`w-14 h-14 mr-7 rounded-lg tablet:w-18 laptop:w-21 tablet:h-18 laptop:h-21
                    overflow-hidden flex items-center justify-center`}
                  />
 
-                  <div className={`inset-0 absolute bg-white rounded-lg w-14 xl:w-18 2xl:w-21 hover:opacity-50 transition duration-300
+                  <div className={`inset-0 absolute bg-white rounded-lg w-14 tablet:w-18 laptop:w-21 hover:opacity-50 transition duration-300
                     ${currentIndex === index ? 'border-3 border-orange opacity-70': 'border-transparent opacity-0'} cursor-pointer`}
                      onClick={() => setCurrentIndex(index)}></div>
               </div>

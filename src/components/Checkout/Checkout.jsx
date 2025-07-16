@@ -34,38 +34,38 @@ const Checkout = () => {
   console.log(orderTotal)
 
   return (
-    <div className='checkout font-kumbh p-5 lg:pl-15 lg:pb-15'>
+    <div className='checkout font-kumbh p-5 minitablet:pl-15 minitablet:pb-15'>
      <div className='flex justify-between'>
-      <h1 className='text-3xl font-bold md:text-4xl md:pt-10 lg:text-4xl lg:pt-10'>
+      <h1 className='text-3xl font-bold mobile:text-4xl mobile:pt-10 minitablet:text-4xl minitablet:pt-10'>
         Order Summary
       </h1>
 
       <a href="/" className='text-orange cursor-pointer'>{'<'} Go back to main page</a>
      </div>
 
-     <h4 className='text-xl font-bold md:text-2xl md:pt-6 lg:text-3xl lg:pt-3'>
+     <h4 className='text-xl font-bold mobile:text-2xl mobile:pt-6 minitablet:text-3xl minitablet:pt-3'>
         Fall Limited Edition Sneakers
      </h4>
      
      
-     <div className='lg:flex lg:text-2xl lg:items-center lg:justify-between px-8 lg:px-10'>
-      <div className='lg:w-full'>
+     <div className='minitablet:flex minitablet:text-2xl minitablet:items-center minitablet:justify-between px-8 minitablet:px-10'>
+      <div className='minitablet:w-full'>
         <HandleDeliveryOptions 
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
         className=''/>
 
         <section className='pt-5 '>
-          <h4 className='text-xl md:text-2xl'> Payment Methods</h4>
+          <h4 className='text-xl mobile:text-2xl'> Payment Methods</h4>
 
           <label 
-          className='text-dark-grayish-blue text-lg md:text-xl'>
+          className='text-dark-grayish-blue text-minitablet mobile:text-xl'>
             Choose your payment option
           </label>
         
-          <div className='lg:relative lg:z-50 lg:w-full lg:mt-4 '>
+          <div className='minitablet:relative minitablet:z-50 minitablet:w-full minitablet:mt-4 '>
             <select type="text" 
-            className='w-3/4 border border-grayish-blue rounded-lg p-3 cursor-pointer md:text-xl focus:ring-2'>
+            className='w-3/4 border border-grayish-blue rounded-lg p-3 cursor-pointer mobile:text-xl focus:ring-2'>
               <option>Mastercard / Visa Card</option>
               <option>Paypal</option>
               <option>Credit Card</option>
@@ -75,7 +75,7 @@ const Checkout = () => {
         </section>
       </div>
 
-      <section className='py-10 md:text-2xl lg:w-3/4'>
+      <section className='py-10 mobile:text-2xl minitablet:w-3/4'>
         
         <div className='flex justify-between'>
         <p>Item({cartItems}):</p>
@@ -99,14 +99,14 @@ const Checkout = () => {
           </p>
         </div>
 
-        <div className='flex justify-between text-lg font-bold border-t border-grayish-blue md:text-3xl md:pt-2'>
+        <div className='flex justify-between text-lg font-bold border-t border-grayish-blue mobile:text-3xl mobile:pt-2'>
           <p className=''>Order Total:</p>
           <p>
             ${orderTotal.toFixed(2)}
           </p>
         </div>
 
-        <button className='bg-orange w-full py-4 rounded-lg font-bold text-lg hover:opacity-70 transition duration-300 cursor-pointer mt-8 md:text-3xl lg:text-2xl'
+        <button className='bg-orange w-full py-4 rounded-lg font-bold text-lg hover:opacity-70 transition duration-300 cursor-pointer mt-8 mobile:text-3xl minitablet:text-2xl'
           onClick={() => {
             localStorage.setItem('selectedDeliveryOption', JSON.stringify(selectedOption))
             navigate('/tracking')}}>

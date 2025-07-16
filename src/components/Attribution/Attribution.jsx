@@ -2,7 +2,7 @@ import React from 'react'
 
 const Attribution = () => {
   return (
-    <div className='relative -bottom-70 md:-bottom-10'>
+    <div className='relative -bottom-70 mobile:-bottom-10'>
      <div className="text-[11px] text-center">
         Challenge by <a 
         className='text-dark-blue'

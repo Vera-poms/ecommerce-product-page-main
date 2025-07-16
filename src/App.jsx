@@ -66,8 +66,8 @@ function App({}) {
    <Router>
     <Routes>
       <Route path='/' element={
-         <div className=''>
-          <div className={` w-full h-screen lg:flex lg:flex-col lg:items-center lg:content-center lg:w-screen lg:h-screen  ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
+         <div className='h-screen w-screen'>
+          <div className={`w-screen h-screen   ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
 
           <div className=''>
             <Navbar isMenuOpen={isMenuOpen} 
@@ -78,18 +78,18 @@ function App({}) {
 
 
             <motion.div
-            initial={{opacity: 0, x: -100}}
+            initial={{opacity: 0, x: 100}}
             animate={{opacity: 1, x:isMenuOpen ? 0 : '-100%'}}
             exit={{opacity: 0, x: -100}}
-            transition={{duration: 0.2}}>
+            transition={{duration: 0.1}}>
               <div className='bg-white fixed left-0 top-0 bottom-0 h-screen w-[65%] z-50 pt-8 pl-6 inset-0 '>
-                <img className='w-8 h-8 md:w-10 md:h-10 cursor-pointer'
+                <img className='w-8 h-8 mobile:w-10 mobile:h-10 cursor-pointer'
                   src={iconClose} alt="icon-close" 
                   onClick={toggleMenu}
                   />
 
                 <div className=''>
-                  <ul className='pt-8 font-semibold space-y-4 text-xl md:text-3xl md:space-y-6'>
+                  <ul className='pt-8 font-semibold space-y-4 text-xl'>
                     <li className='cursor-pointer hover:text-orange'>
                       Collections
                     </li>
@@ -134,7 +134,7 @@ function App({}) {
                 animate={{opacity:1}}
                 exit={{opacity:0}}
                 transition={{duration: 0.5}}
-                className='absolute inset-0 z-10 lg:relative lg:left-70 lg:z-70 lg:-top-32'>
+                className='absolute inset-0 z-10 minitablet:relative minitablet:left-70 minitablet:z-70 minitablet:-top-32'>
                   <CartItems cartItems={cartItems} 
                   addedToCart={addedToCart} 
                   deletCartItem={deletCartItem}
@@ -145,7 +145,7 @@ function App({}) {
           </div>
 
 
-          <div className='lg:flex lg:justify-center lg:items-center lg:relative lg:top-10 lg:w-3/4 lg:h-full bg-white 2xl:relative 2xl:top-12 2xl:bottom-0'>
+          <div className=''>
             <LightBox />
 
             <Description 
