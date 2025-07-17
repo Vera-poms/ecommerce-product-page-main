@@ -33,4 +33,35 @@
   width: 100vw;
   height: 100vh;
  }
+ .links{
+  /* @variant hover{
+   color: var(--color-orange);
+   cursor: pointer;
+   font-weight: bold;
+  } */
+  @variant active{
+   color: var(--color-orange);
+  }
+ }
+ .icon-invert{
+   @variant active{
+    filter: brightness(105%) invert(100%) saturate(1200%) saturate(1200%) sepia(100%) hue-rotate(5deg);
+   }
+   @media (min:1100px) {
+     &:hover{
+      @media(hover:hover){
+       filter: brightness(105%) invert(100%) saturate(1200%) saturate(1200%) sepia(100%) hue-rotate(5deg);
+      }
+    }
+   }
+   
+ }
+ .avatar-ring{
+  @variant active{
+   inset: 0;
+   background-color: transparent;
+   width: 12px;
+   height: 12px;
+  }
+ }
 }

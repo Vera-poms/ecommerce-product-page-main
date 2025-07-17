@@ -7,7 +7,7 @@ import {NavbarMenu} from './data.js'
 
 const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
   return (
-    <nav className='w-screen relative z-20'>
+    <nav className='w-screen relative z-20 top-0 left-0 right-0'>
      <div className={`flex items-center w-screen justify-between h-[150px] px-10 py-0 fixed bg-white `}>
       <div className='flex items-center justify-center'
             >
@@ -15,7 +15,7 @@ const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
          onClick={toggleMenu}
          >
           <img
-          className='w-10 h-10 focus:bg-black' 
+          className='w-10 h-10 icon-invert active:filter active:invert active:brightness-95 active:saturate-[1200%] active:sepia active:hue-rotate-[5deg]' 
           src={iconMenu} alt="icon-menu"
          />
 
@@ -32,10 +32,10 @@ const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
             NavbarMenu.map((item) => {
               return(
                 <li key={item.id} className='relative'>
-                  <a href={item.link} className='inline-block px-3   font-extralight font-kumbh  cursor-pointer'>
+                  <a href={item.link} className='inline-block px-3   font-extralight font-kumbh  cursor-pointer '>
                     {item.title}
                   </a>
-                  <div className='hover:ml-3 absolute hover:text-black inset-0 bg-transparent hover:border-b-3 hover:border-b-orange hover:pb-[58px] transition duration-300 cursor-pointer '></div>
+                  <div className='hover:ml-3 absolute hover:text-black inset-0 bg-transparent hover:border-b-3 hover:border-b-orange  hover:pb-[58px] transition duration-300 cursor-pointer hover:font-bold'></div>
                 </li> 
               )
             })
@@ -47,17 +47,17 @@ const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
       <div className='flex items-center'>
         <div className='relative cursor-pointer'
         onClick={cartToggle}>
-        <img className='w-10 h-10 mr-2 tablet:mr-8  filter minitablet:hover:brightness-0 transition duration-300'
+        <img className='w-12 h-12 mr-6 tablet:mr-8  filter minitablet:hover:brightness-0 transition duration-300'
         src={iconCart} alt="" />
-        <p className={`absolute -top-1 right-1 text-[10px] font-bold bg-orange rounded-3xl text-white px-[5px] minitablet:right-6 ${cartItems === 0 && 'hidden'}`}>{cartItems}</p>
+        <p className={`absolute -top-2 right-1 text-[16px] font-bold bg-orange rounded-3xl text-white px-[12px] minitablet:right-6 ${cartItems === 0 && 'hidden'}`}>{cartItems}</p>
         </div>
 
         <div className='relative '>
         <img 
-        className='w-12 h-12 '
+        className='w-14 h-14 '
         src={imageAvatar} alt="" />
 
-        <div className='inset-0 minitablet:hover:bg-transparent minitablet:hover:w-12 minitablet:hover:h-12 absolute minitablet:hover:border hover:rounded-3xl minitablet:hover:border-orange transition duration-100 cursor-pointer'></div>
+        <div className='inset-0 active:border active:border-orange active:w-14 active:h-14 active:rounded-4xl  minitablet:hover:bg-transparent minitablet:hover:w-14 minitablet:hover:h-14 absolute minitablet:hover:border hover:rounded-4xl minitablet:hover:border-orange  transition duration-100 cursor-pointer'></div>
         </div>
         
       </div>

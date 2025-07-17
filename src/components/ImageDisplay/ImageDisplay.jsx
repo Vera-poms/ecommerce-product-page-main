@@ -50,15 +50,15 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
        </AnimatePresence>
       </div>
 
-      <div className='absolute z-0 top-1/2 flex justify-between w-screen px-3 transform -translate-y-1/2'>
-        <button className='bg-white rounded-[50%] px-[15px] py-[15px] mobile:px-[30px] mobile:py-[30px]'
+      <div className='absolute z-0 top-1/2 flex justify-between w-screen px-8 transform -translate-y-1/2'>
+        <button className='bg-white rounded-[50%] px-[35px] py-[35px]'
         onClick={previousImage}>
-          <img className='h-[15px] w-[15px] mobile:h-[30px] mobile:w-[30px]' 
+          <img className='h-[35px] w-[35px]' 
           src={iconPrevious} alt="" />
         </button>
-        <button className='bg-white rounded-[50%] px-[15px] py-[15px] hover:cursor-pointer mobile:px-[30px] mobile:py-[30px]'
+        <button className='bg-white rounded-[50%] px-[35px] py-[35px]'
         onClick={nextImage}>
-          <img className='h-[15px] w-[15px] mobile:h-[30px] mobile:w-[30px]' 
+          <img className='h-[35px] w-[35px]' 
           src={iconNext} alt="" />
         </button>
       </div>

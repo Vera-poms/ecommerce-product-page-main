@@ -82,28 +82,28 @@ function App({}) {
             animate={{opacity: 1, x:isMenuOpen ? 0 : '-100%'}}
             exit={{opacity: 0, x: -100}}
             transition={{duration: 0.1}}>
-              <div className='bg-white fixed left-0 top-0 bottom-0 h-screen w-[65%] z-50 pt-8 pl-6 inset-0 '>
-                <img className='w-8 h-8 mobile:w-10 mobile:h-10 cursor-pointer'
+              <div className='bg-white fixed left-0 top-0 bottom-0 h-screen w-[65%] z-50 pt-12 pl-10 inset-0 '>
+                <img className='w-10 h-10 cursor-pointer active:filter active:invert active:brightness-95 active:saturate-[1200%] active:sepia active:hue-rotate-[5deg]'
                   src={iconClose} alt="icon-close" 
                   onClick={toggleMenu}
                   />
 
                 <div className=''>
-                  <ul className='pt-8 font-semibold space-y-4 text-xl'>
-                    <li className='cursor-pointer hover:text-orange'>
-                      Collections
+                  <ul className='pt-10 font-semibold space-y-8 text-5xl '>
+                    <li className='links'>
+                      <a href='#Collections'>Collections</a>
                     </li>
-                    <li className='cursor-pointer hover:text-orange'>
-                      Men
+                    <li className='links'>
+                      <a href='#Men'>Men</a>
                     </li>
-                    <li className='cursor-pointer hover:text-orange'>
-                      Women
+                    <li className='links'>
+                      <a href='#Women'>Women</a>
                     </li>
-                    <li className='cursor-pointer hover:text-orange'>
-                      About
+                    <li className='links'>
+                      <a href='#About'>About</a>
                     </li>
-                    <li className='cursor-pointer hover:text-orange'>
-                      Contact
+                    <li className='links'>
+                      <a href='#Contact'>Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -134,7 +134,7 @@ function App({}) {
                 animate={{opacity:1}}
                 exit={{opacity:0}}
                 transition={{duration: 0.5}}
-                className='absolute inset-0 z-10 minitablet:relative minitablet:left-70 minitablet:z-70 minitablet:-top-32'>
+                className='relative z-10'>
                   <CartItems cartItems={cartItems} 
                   addedToCart={addedToCart} 
                   deletCartItem={deletCartItem}
