@@ -6,11 +6,11 @@ import iconCart from '../../../src/assets/images/icon-cart.svg';
 const Description = ({cartItems, decreaseCartItems, increaseCartItems, addedToCart}) => {
   
   return (
-      <div className='font-kumbh'>
+      <div className='font-kumbh pb-16'>
         <div className='px-10'>
-          <h6 className='uppercase text-dark-grayish-blue tracking-widest font-bold text-2xl laptop:text-base'>Sneaker Company</h6>
+          <h6 className='uppercase text-dark-grayish-blue tracking-widest font-bold text-[33px] laptop:text-base'>Sneaker Company</h6>
     
-          <h1 className='text-7xl font-semibold pr-10 py-6  laptop:text-5xl laptop:leading-11 laptop:font-semibold'>
+          <h1 className='text-7xl font-semibold pr-10 py-6  laptop:text-5xl laptop:leading-11 laptop:font-bold'>
           Fall Limited Edition Sneakers
           </h1>
 
@@ -24,7 +24,7 @@ const Description = ({cartItems, decreaseCartItems, increaseCartItems, addedToCa
               <p className='text-[80px] pr-3 font-bold  laptop:pt-3'>
                 $125.00
                 </p>
-                <p className='bg-black text-white rounded-xl px-3 text-[40px] font-semibold'>
+                <p className='bg-black text-white ml-5 rounded-xl px-3 text-[40px] font-semibold'>
                 50%
                 </p>
               </div>
@@ -34,21 +34,21 @@ const Description = ({cartItems, decreaseCartItems, increaseCartItems, addedToCa
             </div>
         </div>
 
-        <div className='pt-8'>
+        <div className='py-8'>
             <div className='w-screen px-10 tablet:flex '>
               <div className='flex justify-between w-full bg-light-grayish-blue rounded-3xl px-8 h-[100px] shadow-xs items-center'>
                 <button className='cursor-pointer'
                 onClick={decreaseCartItems}
                 >
-                  <img src={iconMinus} alt="" className='w-3 mobile:w-6 minitablet:w-3 minitablet:hover:opacity-50' />
+                  <img src={iconMinus} alt="" className='w-8 active:bg-orange/70 trasition-300' />
                 </button>
-                <p className='text-xl font-bold mobile:text-4xl minitablet:text-xl'>
+                <p className='text-4xl font-bold'>
                   {cartItems}
                 </p>
                 <button className='cursor-pointer'
                 onClick={increaseCartItems}
                 >
-                  <img src={iconPlus} alt="" className='w-3 mobile:w-6 minitablet:w-3 minitablet:hover:opacity-50' />
+                  <img src={iconPlus} alt="" className='w-8 active:bg-orange/70 trasition-300' />
                 </button>
               </div>
               
@@ -56,8 +56,8 @@ const Description = ({cartItems, decreaseCartItems, increaseCartItems, addedToCa
                 <button className='flex items-center justify-center h-[100px] py-4 bg-orange hover:opacity-70 active:opacity-70 transition duration-300 w-full rounded-3xl shadow-light border border-orange cursor-pointer'
                 onClick={addedToCart}>
                 <img 
-                src={iconCart} alt="" className='filter brightness-0'/>
-                <p className='text-xl pl-1'>Add to cart</p>
+                src={iconCart} alt="" className='filter brightness-0 w-8'/>
+                <p className='text-4xl pl-2 font-semibold'>Add to cart</p>
                 </button>
               </div>
             </div>
