@@ -7,8 +7,6 @@ import iconPrevious from '../../../src/assets/images/icon-previous.svg'
 import iconNext from '../../../src/assets/images/icon-next.svg'
 
 
-
-
 const LightBox = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentIndex, setCurrentIndex]  = useState(0)

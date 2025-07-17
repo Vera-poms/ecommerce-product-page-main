@@ -1,34 +1,50 @@
 import React, {useState} from 'react'
 import iconPrevious from '../../../src/assets/images/icon-previous.svg'
 import iconNext from '../../../src/assets/images/icon-next.svg'
+import {wrap} from 'popmotion'
 import { images } from './images.js'
 import {motion, AnimatePresence} from 'framer-motion'
-
-
 import CartItems from '../CartItems/CartItems.jsx'
+
+
 const ImageDisplay = ({lightBox, isCartOpen}) => {
-  const [currentIndex, setCurrentIndex]  = useState(0)
-  const [direction, setDirection] = useState(0)
+  const [[currentIndex, direction], setCurrentIndex]  = useState([0, 0])
+  const imageIndex = wrap(0, images.length, currentIndex)
   
 
-  function previousImage(){
-    setDirection(-1)
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? images.length - 1  : prevIndex - 1
-    )
-  }
-  function nextImage(){
-    setDirection(1)
-    setCurrentIndex((prevIndex) => 
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    )
+  const paginate = (newDirection) => {
+    setCurrentIndex([currentIndex + newDirection, newDirection])
   }
 
   const imageVariants = {
-   initial: {opacity: 0, x: direction > 0 ? 300: -300},
-   animate: {opacity: 1, x: 0},
-   exit: {opacity: 0, x: direction < 0 ? 300: -300},
-   transition: {duration: 0.1},
+   initial: (direction) => {
+    return {
+      x: direction > 0 ? 1000: -1000,
+      opacity: 0,
+    };
+   },
+   animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      type: 'spring',
+      visualDuration: 0.3,
+      bounce: 0.5,
+    }
+    
+   },
+   exit: (direction) => {
+    return{
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+    };
+   }
+  }
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity
   }
   
   
@@ -36,29 +52,47 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
     <div className=''>
      <div className='relative top-15 z-0 mb-25 tablet:hidden h-[1000px]'>
 
-      <div className='relative h-full w-screen overflow-hidden'>
-       <AnimatePresence mode='wait' initial='false' custom={direction}>
+      <div className='relative h-full w-screen overflow-hidden bg-none '>
+       <AnimatePresence mode='popLayout' initial={false} custom={direction} propagate>
          <motion.img 
           key={currentIndex}
+          custom={direction}
           initial='initial'
           animate='animate'
           exit='exit'
           variants={imageVariants}
-          src={images[currentIndex]} 
+          transition={{
+            x: {type: 'spring', stiffness: 400, damping: 40},
+            opacity: {duration: 0.1}
+          }}
+          drag='x'
+          dragConstraints={{left: 0, right: 0}}
+          dragElastic={1}
+          onDragEnd={(e, {offset, velocity}) => {
+            const swipe = swipePower(offset.x, velocity.x)
+
+            if(swipe < -swipeConfidenceThreshold){
+              paginate(1)
+            }else if(swipe > swipeConfidenceThreshold){[
+              paginate(-1)
+            ]}
+          }}
+          src={images[imageIndex]} 
           alt={`Product ${currentIndex + 1}`} 
-          className='absolute inset-0 h-full w-screen object-cover' />
+          className='w-full h-full object-cover'
+           />
        </AnimatePresence>
       </div>
 
       <div className='absolute z-0 top-1/2 flex justify-between w-screen px-8 transform -translate-y-1/2'>
-        <button className='bg-white rounded-[50%] px-[35px] py-[35px]'
-        onClick={previousImage}>
-          <img className='h-[35px] w-[35px]' 
+        <button className='bg-white rounded-[50%] px-[35px] py-[35px] active:bg-grayish-blue'
+        onClick={() => paginate(-1)}>
+          <img className='h-[35px] w-[35px] active:filter active:invert active:brightness-95 active:saturate-[1200%] active:sepia active:hue-rotate-[5deg]' 
           src={iconPrevious} alt="" />
         </button>
-        <button className='bg-white rounded-[50%] px-[35px] py-[35px]'
-        onClick={nextImage}>
-          <img className='h-[35px] w-[35px]' 
+        <button className='bg-white rounded-[50%] px-[35px] py-[35px] active:bg-grayish-blue'
+        onClick={() => paginate(1)}>
+          <img className='h-[35px] w-[35px] active:filter active:invert active:brightness-95 active:saturate-[1200%] active:sepia active:hue-rotate-[5deg]' 
           src={iconNext} alt="" />
         </button>
       </div>
@@ -80,7 +114,7 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
       <div>
         <img 
           key={currentIndex}
-          src={images[currentIndex]} 
+          src={images[imageIndex]} 
           alt={`Product ${currentIndex + 1}`}  
           className='w-3/4 rounded-2xl cursor-pointer overflow-hidden laptop:w-5/6'
           onClick={lightBox}/>

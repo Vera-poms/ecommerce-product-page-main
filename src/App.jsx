@@ -10,6 +10,7 @@ import Checkout from './components/Checkout/Checkout.jsx';
 import TrackingOrder from './components/Order/TrackingOrder.jsx';
 import Attribution from './components/Attribution/Attribution.jsx'
 import Test  from './components/Test/Test.jsx'
+import {NavbarMenu} from './components/Navbar/data.js'
 
 
 
@@ -67,7 +68,7 @@ function App({}) {
     <Routes>
       <Route path='/' element={
          <div className='h-screen w-screen'>
-          <div className={`w-screen h-screen   ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
+          <div className={` ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
 
           <div className=''>
             <Navbar isMenuOpen={isMenuOpen} 
@@ -90,21 +91,15 @@ function App({}) {
 
                 <div className=''>
                   <ul className='pt-10 font-semibold space-y-8 text-5xl '>
-                    <li className='links'>
-                      <a href='#Collections'>Collections</a>
-                    </li>
-                    <li className='links'>
-                      <a href='#Men'>Men</a>
-                    </li>
-                    <li className='links'>
-                      <a href='#Women'>Women</a>
-                    </li>
-                    <li className='links'>
-                      <a href='#About'>About</a>
-                    </li>
-                    <li className='links'>
-                      <a href='#Contact'>Contact</a>
-                    </li>
+                    {
+                      NavbarMenu.map((item) => {
+                        return(
+                          <li key={item.id} className='links'>
+                            <a href={item.link}>{item.title}</a>
+                          </li>
+                        )
+                      })
+                    }
                   </ul>
                 </div>
               </div>  
@@ -145,7 +140,7 @@ function App({}) {
           </div>
 
 
-          <div className=''>
+          <div className='tablet:flex tablet: tablet:content-center tablet:place-items-center tablet:h-screen tablet:w-screen '>
             <LightBox />
 
             <Description 

@@ -47,7 +47,7 @@ const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
       <div className='flex items-center'>
         <div className='relative cursor-pointer'
         onClick={cartToggle}>
-        <img className='w-12 h-12 mr-6 tablet:mr-8  filter minitablet:hover:brightness-0 transition duration-300'
+        <img className='w-12 h-12 mr-6 tablet:mr-8  filter active:brightness-0 minitablet:hover:brightness-0  transition duration-300'
         src={iconCart} alt="" />
         <p className={`absolute -top-2 right-1 text-[16px] font-bold bg-orange rounded-3xl text-white px-[12px] minitablet:right-6 ${cartItems === 0 && 'hidden'}`}>{cartItems}</p>
         </div>
