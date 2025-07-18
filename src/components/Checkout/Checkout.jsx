@@ -36,7 +36,7 @@ const Checkout = () => {
   return (
     <div className='checkout font-kumbh px-10 pt-20 pb-20'>
      <div className='flex justify-between'>
-      <h1 className='text-5xl font-bold '>
+      <h1 className='text-7xl font-bold '>
         Order Summary
       </h1>
 
@@ -65,7 +65,7 @@ const Checkout = () => {
         
           <div className='minitablet:relative minitablet:z-50 minitablet:w-full minitablet:mt-4 '>
             <select type="text" 
-            className='w-3/4 border border-grayish-blue rounded-lg p-3 cursor-pointer mobile:text-xl focus:ring-2'>
+            className='w-3/4 border border-grayish-blue rounded-lg py-3 pl-2 pr-4 cursor-pointer mobile:text-xl focus:ring-2'>
               <option>Mastercard / Visa Card</option>
               <option>Paypal</option>
               <option>Credit Card</option>
@@ -99,14 +99,14 @@ const Checkout = () => {
           </p>
         </div>
 
-        <div className='flex justify-between text-2xl font-bold border-t border-grayish-blue'>
+        <div className='flex justify-between text-3xl font-bold border-t border-grayish-blue'>
           <p className=''>Order Total:</p>
           <p>
             ${orderTotal.toFixed(2)}
           </p>
         </div>
 
-        <button className='bg-orange w-full py-4 rounded-lg font-bold text-lg hover:opacity-70 transition duration-300 cursor-pointer mt-8 mobile:text-3xl minitablet:text-2xl'
+        <button className='bg-orange w-full py-4 rounded-lg font-bold text-lg hover:opacity-70 active:opacity-70 transition duration-300 cursor-pointer mt-8 mobile:text-3xl minitablet:text-2xl'
           onClick={() => {
             localStorage.setItem('selectedDeliveryOption', JSON.stringify(selectedOption))
             navigate('/tracking')}}>

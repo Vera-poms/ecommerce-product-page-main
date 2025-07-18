@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import HandleDeliveryOptions from '../Checkout/deliveryOptions'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const TrackingOrder = () => {
@@ -16,7 +18,7 @@ const TrackingOrder = () => {
     }
   }, [])
 
-  
+  const navigate = useNavigate()
   
   function isWeekend(dates){
   let dayOfWeek = dates.format('dddd')
@@ -78,7 +80,8 @@ const TrackingOrder = () => {
     )}
      
       <div className='flex justify-between '>
-        <a href="/checkout" className='text-dark-blue cursor-pointer active:text-dark-blue/50'>{'<'} Checkout page</a>
+        <a href="/checkout" className='text-dark-blue cursor-pointer active:text-dark-blue/50'
+        onClick={() => navigate('/checkout')}>{'<'} Checkout page</a>
 
         <a href="/" className='text-orange cursor-pointer active:text-orange/50 hover:text-orange/70'>{'<<'} Go back to main page</a>
         

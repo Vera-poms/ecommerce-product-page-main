@@ -14,7 +14,7 @@ const CartItems = ({cartItems, isCartOpen, deletCartItem, confirmedCartItems}) =
           initial={{opacity: 0, y: -100}}
           animate={{opacity: 1, y: isCartOpen? 0 : '-100%'}}
           exit={{opacity: 0, y:-100}}
-          className={`tablet: absolute w-[96%] h-[720px] shadow-2xl bg-white rounded-2xl top-248 tablet:w-[380px] tablet:h-[280px] tablet:top-115 tablet:right-40 tablet:rounded-xl`}>
+          className={`tablet:fixed absolute w-[96%] h-[720px] shadow-2xl bg-white rounded-2xl top-248 tablet:w-[380px] tablet:h-[280px] tablet:top-115 tablet:right-40 tablet:rounded-xl`}>
             <div className='h-full'>
               <h1 className='text-5xl font-bold px-12 py-16 h-[25%] border-b-2 border-dark-grayish-blue/10 tablet:text-lg tablet:py-4 tablet:px-6'>Cart</h1>
       
