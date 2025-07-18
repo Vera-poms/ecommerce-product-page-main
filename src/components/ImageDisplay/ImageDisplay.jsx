@@ -7,16 +7,7 @@ import {motion, AnimatePresence} from 'framer-motion'
 import CartItems from '../CartItems/CartItems.jsx'
 
 
-const ImageDisplay = ({lightBox, isCartOpen}) => {
-  const [[currentIndex, direction], setCurrentIndex]  = useState([0, 0])
-  const imageIndex = wrap(0, images.length, currentIndex)
-  
-
-  const paginate = (newDirection) => {
-    setCurrentIndex([currentIndex + newDirection, newDirection])
-  }
-
-  const imageVariants = {
+export const imageVariants = {
    initial: (direction) => {
     return {
       x: direction > 0 ? 1000: -1000,
@@ -42,14 +33,28 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
    }
   }
 
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
+  export const swipeConfidenceThreshold = 10000;
+  export const swipePower = (offset, velocity) => {
     return Math.abs(offset) * velocity
+  }
+
+const ImageDisplay = ({lightBox, isCartOpen}) => {
+  const [[currentIndex, direction], setCurrentIndex]  = useState([0, 0])
+  const imageIndex = wrap(0, images.length, currentIndex)
+  
+
+  const paginate = (newDirection) => {
+    setCurrentIndex([currentIndex + newDirection, newDirection])
+  }
+
+  const goToIndex = (index) => {
+    const direction = index > currentIndex ? 1 : -1
+    setCurrentIndex([index, direction])
   }
   
   
   return (
-    <div className=''>
+    <div className='tablet:w-3/4 '>
      <div className='relative top-15 z-0 mb-25 tablet:hidden h-[1000px]'>
 
       <div className='relative h-full w-screen overflow-hidden bg-none '>
@@ -110,17 +115,24 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
 
      </div>
 
-     <div className='hidden tablet:flex tablet:flex-col tablet:item-center tablet:mr-0 tablet:overflow-hidden'>
-      <div>
-        <img 
+     <div className='hidden tablet:flex tablet:flex-col tablet:w-full tablet:mr-0 tablet:ml-20'>
+      <div className='tablet:'>
+        <AnimatePresence mode='popLayout' initial={false} custom={direction} propagate>
+          <motion.img 
           key={currentIndex}
+          custom={direction}
+          initial={{x:-100, opacity: 0}}
+          animate={{x: 0, opacity: 1, transition:{opacity: {duration: 0.1}
+          }}}
+          exit={{x: -100, opacity: 0}}
           src={images[imageIndex]} 
           alt={`Product ${currentIndex + 1}`}  
-          className='w-3/4 rounded-2xl cursor-pointer overflow-hidden laptop:w-5/6'
+          className='w-3/4 rounded-2xl cursor-pointer overflow-hidden tablet:w-[750px] laptop:w-5/6'
           onClick={lightBox}/>
+        </AnimatePresence>
       </div>
 
-      <div className='flex mt-10'>
+      <div className='flex mt-10 tablet:mt-10'>
         {
           images.map((img, index) => {
             return (
@@ -134,8 +146,8 @@ const ImageDisplay = ({lightBox, isCartOpen}) => {
                  />
 
                   <div className={`inset-0 absolute bg-white rounded-lg w-14 tablet:w-18 laptop:w-21 hover:opacity-50 transition duration-300
-                    ${currentIndex === index ? 'border-3 border-orange opacity-70': 'border-transparent opacity-0'} cursor-pointer`}
-                     onClick={() => setCurrentIndex(index)}></div>
+                    ${imageIndex === index ? 'border-3 border-orange opacity-70': 'border-transparent opacity-0'} cursor-pointer`}
+                     onClick={() => goToIndex(index)}></div>
               </div>
             )
           })

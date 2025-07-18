@@ -7,8 +7,8 @@ import {NavbarMenu} from './data.js'
 
 const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
   return (
-    <nav className='w-screen relative z-20 top-0 left-0 right-0'>
-     <div className={`flex items-center w-screen justify-between h-[150px] px-10 py-0 fixed bg-white `}>
+    <nav className='w-screen relative z-20 top-0 left-0 right-0 tablet:flex tablet:place-items-center tablet:justify-center tablet:z-10 tablet:'>
+     <div className={`flex items-center w-screen justify-between h-[150px] px-10 py-0 fixed bg-white shadow-lg tablet:shadow-none tablet:w-3/4 tablet:px-0 tablet:top-0 tablet:h-[100px] tablet: tablet:border-b-2 tablet:border-dark-grayish-blue/10`}>
       <div className='flex items-center justify-center'
             >
         <div className='cursor-pointer tablet:hidden'
@@ -22,11 +22,11 @@ const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
         </div>
 
         <div className=''>
-          <img className='h-12 ml-8'
+          <img className='h-12 ml-8 tablet:h-6 tablet:ml-0'
           src={logo} alt="logo" />
         </div>
 
-        <div className='hidden tablet:flex minitablet:pl-3 laptop:pl-8'>
+        <div className='hidden tablet:flex tablet:pl-10'>
           <ul className='text-[14px] flex row text-dark-grayish-blue cursor-pointer '>
             {
             NavbarMenu.map((item) => {
@@ -47,17 +47,17 @@ const Navbar = ({toggleMenu, cartItems, cartToggle}) => {
       <div className='flex items-center'>
         <div className='relative cursor-pointer'
         onClick={cartToggle}>
-        <img className='w-12 h-12 mr-6 tablet:mr-8  filter active:brightness-0 minitablet:hover:brightness-0  transition duration-300'
+        <img className='w-12 h-12 mr-6 tablet:mr-8 filter active:brightness-0 minitablet:hover:brightness-0  transition duration-300 tablet:w-5 tablet:h-5'
         src={iconCart} alt="" />
-        <p className={`absolute -top-2 right-1 text-[16px] font-bold bg-orange rounded-3xl text-white px-[12px] minitablet:right-6 ${cartItems === 0 && 'hidden'}`}>{cartItems}</p>
+        <p className={`absolute -top-2 right-1 text-[16px] font-bold bg-orange rounded-3xl text-white px-[12px] minitablet:right-6 tablet:text-[10px] tablet:px-[4px] tablet:rounded-lg ${cartItems === 0 && 'hidden'}`}>{cartItems}</p>
         </div>
 
         <div className='relative '>
         <img 
-        className='w-14 h-14 '
+        className='w-14 h-14 tablet:w-12 tablet:h-12'
         src={imageAvatar} alt="" />
 
-        <div className='inset-0 active:border active:border-orange active:w-14 active:h-14 active:rounded-4xl  minitablet:hover:bg-transparent minitablet:hover:w-14 minitablet:hover:h-14 absolute minitablet:hover:border hover:rounded-4xl minitablet:hover:border-orange  transition duration-100 cursor-pointer'></div>
+        <div className='inset-0 active:border active:border-orange active:w-14 active:h-14 active:rounded-4xl tablet:hover:bg-transparent tablet:hover:w-12 tablet:hover:h-12 absolute minitablet:hover:border hover:rounded-4xl minitablet:hover:border-orange  transition duration-100 cursor-pointer'></div>
         </div>
         
       </div>

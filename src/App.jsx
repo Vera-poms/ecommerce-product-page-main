@@ -68,7 +68,7 @@ function App({}) {
     <Routes>
       <Route path='/' element={
          <div className='h-screen w-screen'>
-          <div className={` ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
+          <div className={`h-screen w-screen ${isMenuOpen ? 'overflow-hidden' : ""} `}> 
 
           <div className=''>
             <Navbar isMenuOpen={isMenuOpen} 
@@ -129,7 +129,7 @@ function App({}) {
                 animate={{opacity:1}}
                 exit={{opacity:0}}
                 transition={{duration: 0.5}}
-                className='relative z-10'>
+                className='relative z-10 tablet:z-30'>
                   <CartItems cartItems={cartItems} 
                   addedToCart={addedToCart} 
                   deletCartItem={deletCartItem}
@@ -140,7 +140,7 @@ function App({}) {
           </div>
 
 
-          <div className='tablet:flex tablet: tablet:content-center tablet:place-items-center tablet:h-screen tablet:w-screen '>
+          <div className='tablet:flex tablet:px-30 tablet:pt-30 tablet:items-center tablet:h-screen tablet:w-full '>
             <LightBox />
 
             <Description 
@@ -152,7 +152,7 @@ function App({}) {
           </div>      
           </div>
 
-          {/* <Attribution /> */}
+          <Attribution />
         </div>
       }/>
       <Route path='/checkout' element={<Checkout cartItems={cartItems}/>}/>

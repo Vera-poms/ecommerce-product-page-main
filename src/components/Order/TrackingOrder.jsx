@@ -42,20 +42,21 @@ const TrackingOrder = () => {
    const today = dayjs()
    const storedOption = JSON.parse(localStorage.getItem('selectedDeliveryOption'))
    const orderTime = dayjs(storedOption.orderTime)
-  //  const percentageProgress = ((today - arrivalDate) / (arrivalDate - orderTime)) * 100
+
 
 
   return (
-    <div className='pt-20 px-6 font-kumbh flex flex-col laptop:px-14'>
-     <h2 className='text-2xl font-bold mobile:text-3xl laptop:text-4xl'>
+    <div className='py-20 px-6 font-kumbh flex flex-col laptop:px-14'>
+      <h1 className='text-5xl font-bold'>Track Your Order</h1>
+     <h2 className='text-2xl font-semibold mobile:text-3xl laptop:text-4xl pt-10'>
       Thank you for shopping with us!
      </h2>
 
      <section className='mobile:text-2xl'> 
-      <h3 className='pt-20 text-dark-grayish-blue'>Your order is being prepared to be shipped:</h3>
+      <h3 className='text-dark-grayish-blue text-2xl pt-5'>Your order is being prepared to be shipped:</h3>
 
-      <div className='rounded-lg h-[25px] w-full border my-6'>
-        <div className='bg-orange/50 h-full w-1/16 rounded-lg'>
+      <div className='rounded-lg h-[25px] w-3/4 border my-6'>
+        <div className='bg-orange/70 h-full w-1/16 rounded-s-lg'>
         </div>
 
         <div className='flex justify-between text-dark-grayish-blue'>
@@ -69,16 +70,18 @@ const TrackingOrder = () => {
     {selectedOption ?( 
      <section className='py-10 '>
         <h1 className='text-xl mobile:text-3xl'>Your order arrives on:</h1>
-        <p className='text-dark-grayish-blue mobile:text-xl'>{arrivalDate}</p>
+        <p className='text-dark-grayish-blue text-2xl font-medium pl-10'>{arrivalDate}</p>
         
       </section>
     ):(
       <p>Loading delivery date...</p>
     )}
      
-      <div className='flex justify-between'>
-        <a href="/" className='text-orange cursor-pointer'>{'<<'} Go back to main page</a>
-        <a href="/checkout" className='text-dark-blue cursor-pointer'>{'<'} Checkout page</a>
+      <div className='flex justify-between '>
+        <a href="/checkout" className='text-dark-blue cursor-pointer active:text-dark-blue/50'>{'<'} Checkout page</a>
+
+        <a href="/" className='text-orange cursor-pointer active:text-orange/50 hover:text-orange/70'>{'<<'} Go back to main page</a>
+        
       </div>
     </div>
   )

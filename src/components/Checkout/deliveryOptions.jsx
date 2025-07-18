@@ -48,7 +48,7 @@ function HandleDeliveryOptions({selectedOption, setSelectedOption, arrival, setA
 
   return (
     <div>
-     <h2 className='flex relative cursor-pointer text-lg pb-2 mobile:text-2xl'>
+     <h2 className='flex relative cursor-pointer text-xl py-3'>
       Delivery Options 
     </h2>
      {
@@ -60,7 +60,7 @@ function HandleDeliveryOptions({selectedOption, setSelectedOption, arrival, setA
 
        return(
         <div key={deliveryOption.id} 
-        className={`shadow-xl rounded-lg p-5 mb-3 cursor-pointer mobile:w-full mobile:text-2xl mobile:rounded-xl  lg:text-lg lg:w-3/4 border border-grayish-blue ${isChecked(deliveryOption.id) ? 'bg-orange text-light-grayish-blue' : 'bg-white'}  transition transition-300 hover:bg-orange/50 hover:text-black`}>
+        className={`shadow-xl rounded-lg p-5 mb-3 cursor-pointer mobile:w-full mobile:text-2xl mobile:rounded-xl tablet:text-lg tablet:w-3/4 border border-grayish-blue ${isChecked(deliveryOption.id) ? 'bg-orange text-light-grayish-blue' : 'bg-white'}  transition transition-300 hover:bg-orange/50 hover:text-black active:bg-orange/50`}>
          
          <label className='cursor-pointer '>
 

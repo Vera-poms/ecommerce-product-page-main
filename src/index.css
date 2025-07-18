@@ -22,7 +22,7 @@
  --breakpoint-min-mobile: 501px;
  --breakpoint-minitablet: 830px;
  --breakpoint-tablet: 1100px;
- --breakpoint-laptop: 1400px;
+ --breakpoint-laptop: 1370px;
 
 }
 @layer components{

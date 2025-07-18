@@ -34,29 +34,29 @@ const Checkout = () => {
   console.log(orderTotal)
 
   return (
-    <div className='checkout font-kumbh p-5 minitablet:pl-15 minitablet:pb-15'>
+    <div className='checkout font-kumbh px-10 pt-20 pb-20'>
      <div className='flex justify-between'>
-      <h1 className='text-3xl font-bold mobile:text-4xl mobile:pt-10 minitablet:text-4xl minitablet:pt-10'>
+      <h1 className='text-5xl font-bold '>
         Order Summary
       </h1>
 
-      <a href="/" className='text-orange cursor-pointer'>{'<'} Go back to main page</a>
+      <a href="/" className='text-orange cursor-pointer text-2xl pt-2 pr-3 hover:text-orange/70 active:text-orange/90'>{'<'} Go back to main page</a>
      </div>
 
-     <h4 className='text-xl font-bold mobile:text-2xl mobile:pt-6 minitablet:text-3xl minitablet:pt-3'>
+     <h4 className='text-5xl font-bold pt-6'>
         Fall Limited Edition Sneakers
      </h4>
      
      
-     <div className='minitablet:flex minitablet:text-2xl minitablet:items-center minitablet:justify-between px-8 minitablet:px-10'>
-      <div className='minitablet:w-full'>
+     <div className='tablet:flex text-2xl items-center justify-between'>
+      <div className='w-full'>
         <HandleDeliveryOptions 
         selectedOption={selectedOption}
         setSelectedOption={setSelectedOption}
         className=''/>
 
-        <section className='pt-5 '>
-          <h4 className='text-xl mobile:text-2xl'> Payment Methods</h4>
+        <section className='pt-8 '>
+          <h4 className='text-2xl font-semibold'> Payment Methods</h4>
 
           <label 
           className='text-dark-grayish-blue text-minitablet mobile:text-xl'>
@@ -75,7 +75,7 @@ const Checkout = () => {
         </section>
       </div>
 
-      <section className='py-10 mobile:text-2xl minitablet:w-3/4'>
+      <section className='py-10 tablet:w-3/4'>
         
         <div className='flex justify-between'>
         <p>Item({cartItems}):</p>
@@ -99,7 +99,7 @@ const Checkout = () => {
           </p>
         </div>
 
-        <div className='flex justify-between text-lg font-bold border-t border-grayish-blue mobile:text-3xl mobile:pt-2'>
+        <div className='flex justify-between text-2xl font-bold border-t border-grayish-blue'>
           <p className=''>Order Total:</p>
           <p>
             ${orderTotal.toFixed(2)}
