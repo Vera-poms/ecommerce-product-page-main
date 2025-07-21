@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import HandleDeliveryOptions from '../Checkout/deliveryOptions'
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
 import { useNavigate } from 'react-router-dom'
 
 
 
 const TrackingOrder = () => {
+  
+  const navigate = useNavigate()
+
   const [selectedOption, setSelectedOption] = useState(null)
   const [arrivalDate, setArrivalDate] = useState('')
 
@@ -18,7 +20,7 @@ const TrackingOrder = () => {
     }
   }, [])
 
-  const navigate = useNavigate()
+  
   
   function isWeekend(dates){
   let dayOfWeek = dates.format('dddd')
