@@ -82,10 +82,11 @@ const TrackingOrder = () => {
     )}
      
       <div className='flex justify-between '>
-        <a href="/checkout" className='text-dark-blue cursor-pointer active:text-dark-blue/50'
+        <a className='text-dark-blue cursor-pointer active:text-dark-blue/50'
         onClick={() => navigate('/checkout')}>{'<'} Checkout page</a>
+        
 
-        <a href="/" className='text-orange cursor-pointer active:text-orange/50 hover:text-orange/70'>{'<<'} Go back to main page</a>
+        <a onClick={() => navigate('/')} className='text-orange cursor-pointer active:text-orange/50 hover:text-orange/70'>{'<<'} Go back to main page</a>
         
       </div>
     </div>
